@@ -1,0 +1,66 @@
+{
+  "FP001": {
+    "productId": "FP001",
+    "productName": "稳健增长基金",
+    "productType": "Fund",
+    "unitPrice": 1.523,
+    "expectedReturnRate": 5.8,
+    "riskLevel": "Low"
+  },
+  "FP002": {
+    "productId": "FP002",
+    "productName": "科技创新股票",
+    "productType": "Stock",
+    "unitPrice": 25.67,
+    "expectedReturnRate": 12.5,
+    "riskLevel": "High"
+  },
+  "FP003": {
+    "productId": "FP003",
+    "productName": "国债逆回购",
+    "productType": "Bond",
+    "unitPrice": 100.0,
+    "expectedReturnRate": 3.2,
+    "riskLevel": "Low"
+  },
+  "FP004": {
+    "productId": "FP004",
+    "productName": "平衡混合基金",
+    "productType": "Fund",
+    "unitPrice": 2.341,
+    "expectedReturnRate": 7.3,
+    "riskLevel": "Medium"
+  },
+  "FP005": {
+    "productId": "FP005",
+    "productName": "医疗健康保险",
+    "productType": "Insurance",
+    "unitPrice": 500.0,
+    "expectedReturnRate": 4.5,
+    "riskLevel": "Low"
+  },
+  "FP006": {
+    "productId": "FP006",
+    "productName": "新能源ETF",
+    "productType": "Fund",
+    "unitPrice": 1.876,
+    "expectedReturnRate": 9.8,
+    "riskLevel": "Medium"
+  },
+  "FP007": {
+    "productId": "FP007",
+    "productName": "蓝筹股组合",
+    "productType": "Stock",
+    "unitPrice": 45.32,
+    "expectedReturnRate": 8.6,
+    "riskLevel": "Medium"
+  },
+  "FP008": {
+    "productId": "FP008",
+    "productName": "货币基金",
+    "productType": "Fund",
+    "unitPrice": 1.0,
+    "expectedReturnRate": 2.5,
+    "riskLevel": "Low"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "testuser": {
+    "FP001": {
+      "username": "testuser",
+      "productId": "FP001",
+      "productName": "稳健增长基金",
+      "quantity": 100.0,
+      "averageCost": 1.523,
+      "currentValue": 152.29999999999998
+    }
+  }
+}
