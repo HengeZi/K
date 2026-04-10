@@ -11,7 +11,7 @@ import com.example.k.model.Product;
 import com.example.k.model.UserProduct;
 import com.example.k.model.Transaction;
 
-@Database(entities = {User.class, Product.class, UserProduct.class, Transaction.class}, version = 1)
+@Database(entities = {User.class, Product.class, UserProduct.class, Transaction.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
 
