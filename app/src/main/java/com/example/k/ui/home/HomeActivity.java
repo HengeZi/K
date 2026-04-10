@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import com.example.k.model.UserProduct;
+import com.example.k.model.Transaction;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +27,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class HomeActivity extends AppCompatActivity {
+公共 class HomeActivity extends AppCompatActivity {
     private ListView lvProducts;
     private SwipeRefreshLayout swipeRefresh;
     private TextView tvWelcome, tvTotalValue;
