@@ -1,21 +1,70 @@
 ```
-# Android build artifacts
+# Android build outputs
 app/build/
-.gradle/
+app/*/build/
+
+# Android Studio generated files
 local.properties
+.gradle/
+
+# Android cache
+.cache/
+
+# APK files
+*.apk
+*.ap_
+
+# Proguard logs
+proguard/
+
+# Android lint
+lint-results-*.xml
 
 # Generated files
 gen/
-bin/
-gen-external-apklibs/
+generated/
 
-# Log files
+# Keystore
+*.keystore
+*.jks
+
+# Android Studio IDE
+.idea/
+*.iml
+*.iws
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
 *.log
 
-# OS generated files
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Python related (if any Python components)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/modules/
 .DS_Store
 Thumbs.db
-
-# Local configuration property files
-local.properties
 ```
