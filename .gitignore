@@ -1,70 +1,55 @@
-```
-# Android build outputs
-app/build/
-app/*/build/
-
-# Android Studio generated files
-local.properties
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+build/
+target/
 .gradle/
-
-# Android cache
-.cache/
-
-# APK files
-*.apk
-*.ap_
-
-# Proguard logs
-proguard/
-
-# Android lint
-lint-results-*.xml
-
-# Generated files
-gen/
-generated/
-
-# Keystore
-*.keystore
-*.jks
-
-# Android Studio IDE
-.idea/
-*.iml
-*.iws
-
-# Temporary files
-*.tmp
-*.temp
-
-# Logs
 *.log
-
-# Environment files
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
 .env
 .env.local
 *.env.*
-
-# Python related (if any Python components)
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
+.vscode/
+.idea/
+.mypy_cache/
+.pytest_cache/
+coverage/
+htmlcov/
+.coverage
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+node_modules/
 venv/
 .venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.git/modules/
-.DS_Store
-Thumbs.db
-```
+__pycache__/
+dist/
+julia-*/
+zig*/
