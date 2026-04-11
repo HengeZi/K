@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@color/background_card">
 
     <TextView
         android:id="@+id/tvDialogTitle"
@@ -12,7 +14,7 @@
         android:text="买入/卖出"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#333333"
+        android:textColor="@color/text_primary"
         android:gravity="center"
         android:layout_marginBottom="16dp"/>
 
@@ -23,7 +25,7 @@
         android:text="产品名称"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#333333"
+        android:textColor="@color/text_primary"
         android:layout_marginBottom="8dp"/>
 
     <TextView
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="当前价格：¥0.00"
         android:textSize="16sp"
-        android:textColor="#1976D2"
+        android:textColor="@color/primary"
         android:layout_marginBottom="8dp"/>
 
     <TextView
@@ -41,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="持有数量：0"
         android:textSize="14sp"
-        android:textColor="#666666"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="16dp"/>
 
     <RadioGroup
@@ -57,14 +59,16 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:text="买入"
-            android:checked="true"/>
+            android:checked="true"
+            android:textColor="@color/text_primary"/>
 
         <RadioButton
             android:id="@+id/rbSell"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="卖出"/>
+            android:text="卖出"
+            android:textColor="@color/text_primary"/>
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -72,14 +76,26 @@
         android:layout_height="wrap_content"
         android:hint="数量"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="8dp"
+        app:boxStrokeColor="@color/primary"
+        app:hintTextColor="@color/primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_primary"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        android:textColor="@color/text_hint"
+        android:layout_marginBottom="16dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +117,8 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:text="确认买入"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/primary"/>
     </LinearLayout>
 
 </LinearLayout>

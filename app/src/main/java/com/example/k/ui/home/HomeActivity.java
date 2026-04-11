@@ -22,6 +22,7 @@ import com.example.k.model.UserProduct;
 import com.example.k.model.Transaction;
 import com.example.k.ui.profile.ProfileActivity;
 import com.example.k.ui.transactions.TransactionsActivity;
+import com.example.k.ui.holdings.HoldingsActivity;
 import com.example.k.utils.SessionManager;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     private ListView lvProducts;
     private SwipeRefreshLayout swipeRefresh;
     private TextView tvWelcome, tvTotalValue;
-    private Button btnProfile, btnTransactions;
+    private Button btnProfile, btnTransactions, btnHoldings;
     private AppDatabase database;
     private SessionManager sessionManager;
     private ExecutorService executor;
@@ -56,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         tvTotalValue = findViewById(R.id.tvTotalValue);
         btnProfile = findViewById(R.id.btnProfile);
         btnTransactions = findViewById(R.id.btnTransactions);
+        btnHoldings = findViewById(R.id.btnHoldings);
 
         String username = sessionManager.getUsername();
         tvWelcome.setText("欢迎，" + username);
@@ -84,6 +86,12 @@ public class HomeActivity extends AppCompatActivity {
 
         btnTransactions.setOnClickListener(v -> {
             startActivity(new Intent(HomeActivity.this, TransactionsActivity.class));
+        });
+
+        btnHoldings.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, HoldingsActivity.class);
+            intent.putExtra("USER_ID", sessionManager.getUserId());
+            startActivity(intent);
         });
     }
 
