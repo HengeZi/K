@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import com.example.k.model.UserProduct;
+import com.example.k.model.Transaction;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -30,7 +32,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class HomeActivity extends AppCompatActivity {
+class HomeActivity extends AppCompatActivity {
     private ListView lvProducts;
     private SwipeRefreshLayout swipeRefresh;
     private TextView tvWelcome, tvTotalValue;
@@ -180,10 +182,10 @@ public class HomeActivity extends AppCompatActivity {
         rgTransactionType.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.rbBuy) {
                 btnConfirm.setText("确认买入");
-                etAmount.setHint("买入数量");
+              //  etAmount.setHint("买入数量");
             } else {
                 btnConfirm.setText("确认卖出");
-                etAmount.setHint("卖出数量");
+              //  etAmount.setHint("卖出数量");
             }
         });
 
