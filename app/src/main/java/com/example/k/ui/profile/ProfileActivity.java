@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.k.R;
 import com.example.k.database.AppDatabase;
@@ -22,6 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView tvUsername;
     private EditText etName, etEmail, etPhone, etOldPassword, etNewPassword, etConfirmPassword;
     private Button btnSave, btnLogout;
+    private Switch switchNightMode;
     private AppDatabase database;
     private SessionManager sessionManager;
     private ExecutorService executor;
@@ -45,8 +48,22 @@ public class ProfileActivity extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnSave = findViewById(R.id.btnSave);
         btnLogout = findViewById(R.id.btnLogout);
+        switchNightMode = findViewById(R.id.switchNightMode);
 
         loadUserInfo();
+        
+        // 加载夜间模式设置
+        boolean isNightMode = getSharedPreferences("settings", MODE_PRIVATE)
+                .getBoolean("night_mode", false);
+        switchNightMode.setChecked(isNightMode);
+        switchNightMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            getSharedPreferences("settings", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("night_mode", isChecked)
+                    .apply();
+            AppCompatDelegate.setDefaultNightMode(
+                    isChecked ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
+        });
 
         btnSave.setOnClickListener(v -> saveUserInfo());
         btnLogout.setOnClickListener(v -> logout());

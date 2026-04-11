@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 (保持与日间模式一致) -->
+    <color name="primary">#1976D2</color>
+    <color name="primary_dark">#1565C0</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#FF5722</color>
+
+    <!-- 背景与文字 (夜间模式) -->
+    <color name="background_main">#121212</color>
+    <color name="background_card">#1E1E1E</color>
+    <color name="text_primary">#E0E0E0</color>
+    <color name="text_secondary">#A0A0A0</color>
+    <color name="text_hint">#6E6E6E</color>
+    <color name="divider">#333333</color>
+
+    <!-- 功能色 (调整为适合暗色背景的亮度) -->
+    <color name="success">#81C784</color>
+    <color name="warning">#FFB74D</color>
+    <color name="danger">#E57373</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    
+    <!-- 风险等级颜色 -->
+    <color name="risk_low">#81C784</color>
+    <color name="risk_medium">#FFB74D</color>
+    <color name="risk_high">#E57373</color>
+</resources>

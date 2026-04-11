@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/background_main">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:text="个人中心"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#1976D2"
+            android:textColor="@color/primary"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"/>
 
@@ -26,7 +27,7 @@
             android:layout_marginBottom="16dp"
             app:cardElevation="2dp"
             app:cardCornerRadius="8dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/background_card">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                     android:text="账户信息"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#333333"
+                    android:textColor="@color/text_primary"
                     android:layout_marginBottom="16dp"/>
 
                 <TextView
@@ -49,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:text="用户名"
                     android:textSize="16sp"
-                    android:textColor="#666666"
+                    android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp"/>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -57,13 +58,16 @@
                     android:layout_height="wrap_content"
                     android:hint="姓名"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"/>
+                        android:inputType="textPersonName"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -71,27 +75,80 @@
                     android:layout_height="wrap_content"
                     android:hint="邮箱"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="手机号"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="phone"/>
+                        android:inputType="phone"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/background_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主题设置"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="夜间模式"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <Switch
+                        android:id="@+id/switchNightMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"/>
+                </LinearLayout>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -102,7 +159,7 @@
             android:layout_marginBottom="24dp"
             app:cardElevation="2dp"
             app:cardCornerRadius="8dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto">
+            app:cardBackgroundColor="@color/background_card">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,7 +173,7 @@
                     android:text="修改密码"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#333333"
+                    android:textColor="@color/text_primary"
                     android:layout_marginBottom="16dp"/>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -124,13 +181,16 @@
                     android:layout_height="wrap_content"
                     android:hint="原密码"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etOldPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -138,26 +198,32 @@
                     android:layout_height="wrap_content"
                     android:hint="新密码"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etNewPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="确认新密码"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/primary"
+                    app:hintTextColor="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etConfirmPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword"
+                        android:textColor="@color/text_primary"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -169,7 +235,7 @@
             android:layout_height="56dp"
             android:text="保存修改"
             android:textSize="16sp"
-            android:backgroundTint="#1976D2"
+            android:backgroundTint="@color/primary"
             android:layout_marginBottom="16dp"/>
 
         <Button
