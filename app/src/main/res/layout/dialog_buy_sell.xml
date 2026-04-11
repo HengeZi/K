@@ -6,11 +6,22 @@
     android:padding="24dp">
 
     <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="买入/卖出"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
         android:id="@+id/tvProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="产品名称"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#333333"
         android:layout_marginBottom="8dp"/>
@@ -22,12 +33,44 @@
         android:text="当前价格：¥0.00"
         android:textSize="16sp"
         android:textColor="#1976D2"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvHoldAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="持有数量：0"
+        android:textSize="14sp"
+        android:textColor="#666666"
         android:layout_marginBottom="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgTransactionType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbBuy"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="买入"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbSell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="卖出"/>
+    </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="购买数量"
+        android:hint="数量"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="24dp">
 

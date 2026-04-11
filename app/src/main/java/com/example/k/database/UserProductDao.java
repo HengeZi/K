@@ -31,4 +31,7 @@ public interface UserProductDao {
 
     @Query("SELECT SUM(amount) FROM user_products WHERE userId = :userId AND productId = :productId")
     Double getTotalAmount(int userId, int productId);
+
+    @Query("DELETE FROM user_products WHERE userId = :userId AND productId = :productId")
+    void deleteUserProductsByProduct(int userId, int productId);
 }
