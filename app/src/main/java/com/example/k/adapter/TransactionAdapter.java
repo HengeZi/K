@@ -60,13 +60,13 @@ public class TransactionAdapter extends BaseAdapter {
 
         Transaction transaction = transactionList.get(position);
         holder.tvProductName.setText(transaction.getProductName());
-        holder.tvType.setText(transaction.getType().equals("BUY") ? "买入" : "卖出");
-        holder.tvAmount.setText(String.format("数量：%.2f", transaction.getAmount()));
+        holder.tvType.setText(transaction.getType());
+        holder.tvAmount.setText(String.format("份额：%.2f", transaction.getShares()));
         holder.tvPrice.setText(String.format("单价：¥%.2f", transaction.getPrice()));
-        holder.tvTotal.setText(String.format("总计：¥%.2f", transaction.getAmount() * transaction.getPrice()));
-        holder.tvDate.setText(dateFormat.format(new Date(transaction.getDate())));
+        holder.tvTotal.setText(String.format("总计：¥%.2f", transaction.getAmount()));
+        holder.tvDate.setText(dateFormat.format(new Date(transaction.getTimestamp())));
 
-        int typeColor = transaction.getType().equals("BUY") ?
+        int typeColor = transaction.getType().equals("买入") ?
                 context.getResources().getColor(android.R.color.holo_red_dark) :
                 context.getResources().getColor(android.R.color.holo_green_dark);
         holder.tvType.setTextColor(typeColor);

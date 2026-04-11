@@ -223,7 +223,7 @@ public class HomeActivity extends AppCompatActivity {
             database.userProductDao().insert(userProduct);
 
             Transaction transaction = new Transaction(
-                    userId, product.getId(), "BUY", amount, product.getPrice(), buyDate, product.getName());
+                    userId, product.getId(), "买入", amount, product.getPrice(), amount * product.getPrice(), buyDate, product.getName());
             database.transactionDao().insert(transaction);
 
             runOnUiThread(() -> {
@@ -250,7 +250,7 @@ public class HomeActivity extends AppCompatActivity {
             long sellDate = System.currentTimeMillis();
             
             Transaction transaction = new Transaction(
-                    userId, product.getId(), "SELL", amount, product.getPrice(), sellDate, product.getName());
+                    userId, product.getId(), "卖出", amount, product.getPrice(), amount * product.getPrice(), sellDate, product.getName());
             database.transactionDao().insert(transaction);
             
             if (Math.abs(amount - holdAmt) < 0.001) {
