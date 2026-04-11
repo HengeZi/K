@@ -60,8 +60,8 @@ public class HoldingsAdapter extends RecyclerView.Adapter<HoldingsAdapter.ViewHo
         HoldingItem item = itemList.get(position);
         
         holder.tvProductName.setText(item.product.getName());
-        holder.tvHoldings.setText(String.format("持有：%.2f 份", item.userProduct.getShares()));
-        holder.tvNetValue.setText(String.format("¥%s", item.product.getNetValue()));
+        holder.tvHoldings.setText(String.format("持有：%.2f 份", item.userProduct.getAmount()));
+        holder.tvNetValue.setText(String.format("¥%.2f", item.product.getPrice()));
         holder.tvMarketValue.setText(String.format("¥%.2f", item.marketValue));
         
         String profitText = String.format("%s¥%.2f", item.profit.compareTo(BigDecimal.ZERO) >= 0 ? "+" : "", item.profit);

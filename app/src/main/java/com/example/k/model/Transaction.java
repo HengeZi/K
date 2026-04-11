@@ -9,19 +9,23 @@ public class Transaction {
     private int id;
     private int userId;
     private int productId;
-    private String type; // "BUY" or "SELL"
-    private double amount;
-    private double price;
-    private long date;
+    private String type; // "买入" or "卖出"
+    private double shares; // 份额
+    private double price; // 单价
+    private double amount; // 总金额
+    private long timestamp; // 时间戳
     private String productName;
 
-    public Transaction(int userId, int productId, String type, double amount, double price, long date, String productName) {
+    public Transaction() {}
+
+    public Transaction(int userId, int productId, String type, double shares, double price, double amount, long timestamp, String productName) {
         this.userId = userId;
         this.productId = productId;
         this.type = type;
-        this.amount = amount;
+        this.shares = shares;
         this.price = price;
-        this.date = date;
+        this.amount = amount;
+        this.timestamp = timestamp;
         this.productName = productName;
     }
 
@@ -33,12 +37,14 @@ public class Transaction {
     public void setProductId(int productId) { this.productId = productId; }
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
+    public double getShares() { return shares; }
+    public void setShares(double shares) { this.shares = shares; }
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
-    public long getDate() { return date; }
-    public void setDate(long date) { this.date = date; }
+    public double getAmount() { return amount; }
+    public void setAmount(double amount) { this.amount = amount; }
+    public long getTimestamp() { return timestamp; }
+    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
     public String getProductName() { return productName; }
     public void setProductName(String productName) { this.productName = productName; }
 }
