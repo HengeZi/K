@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     private ListView lvProducts;
     private SwipeRefreshLayout swipeRefresh;
     private TextView tvWelcome, tvTotalValue;
