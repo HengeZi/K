@@ -2,6 +2,7 @@ package com.example.k.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.Ignore;
 
 @Entity(tableName = "transactions")
 public class Transaction {
@@ -18,6 +19,7 @@ public class Transaction {
 
     public Transaction() {}
 
+    @Ignore
     public Transaction(int userId, int productId, String type, double shares, double price, double amount, long timestamp, String productName) {
         this.userId = userId;
         this.productId = productId;
