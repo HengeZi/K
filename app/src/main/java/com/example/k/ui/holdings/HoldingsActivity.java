@@ -132,8 +132,8 @@ public class HoldingsActivity extends AppCompatActivity implements HoldingsAdapt
             Product product = productMap.get(up.getProductId());
             if (product == null) continue;
 
-            BigDecimal shares = new BigDecimal(up.getShares());
-            BigDecimal netValue = new BigDecimal(product.getNetValue());
+            BigDecimal shares = new BigDecimal(up.getAmount());
+            BigDecimal netValue = new BigDecimal(product.getPrice());
             BigDecimal buyPrice = new BigDecimal(up.getBuyPrice());
 
             BigDecimal marketValue = shares.multiply(netValue);
@@ -182,7 +182,7 @@ public class HoldingsActivity extends AppCompatActivity implements HoldingsAdapt
             dialogView.findViewById(R.id.etAmount);
         TextView tvHint = dialogView.findViewById(R.id.tvHint);
         
-        tvHint.setText("最大可卖出：" + userProduct.getShares() + " 份");
+        tvHint.setText("最大可卖出：" + userProduct.getAmount() + " 份");
 
         builder.setPositiveButton("确认卖出", (dialog, which) -> {
             String amountStr = etAmount.getText().toString().trim();
@@ -197,7 +197,7 @@ public class HoldingsActivity extends AppCompatActivity implements HoldingsAdapt
                     Toast.makeText(this, "卖出份额必须大于 0", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (shares > userProduct.getShares()) {
+                if (shares > userProduct.getAmount()) {
                     Toast.makeText(this, "卖出份额不能超过持有量", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -216,12 +216,12 @@ public class HoldingsActivity extends AppCompatActivity implements HoldingsAdapt
         executor.execute(() -> {
             try {
                 // 更新持有量
-                double newShares = userProduct.getShares() - shares;
+                double newShares = userProduct.getAmount() - shares;
                 if (newShares <= 0.001) {
                     // 如果全部卖出，删除记录
                     database.userProductDao().delete(userProduct);
                 } else {
-                    userProduct.setShares(newShares);
+                    userProduct.setAmount(newShares);
                     database.userProductDao().update(userProduct);
                 }
 
@@ -231,14 +231,14 @@ public class HoldingsActivity extends AppCompatActivity implements HoldingsAdapt
                 transaction.setProductId(product.getId());
                 transaction.setType("卖出");
                 transaction.setShares(shares);
-                transaction.setPrice(Double.parseDouble(product.getNetValue()));
-                transaction.setAmount(shares * Double.parseDouble(product.getNetValue()));
+                transaction.setPrice(product.getPrice());
+                transaction.setAmount(shares * product.getPrice());
                 transaction.setTimestamp(System.currentTimeMillis());
 
                 database.transactionDao().insert(transaction);
 
                 // 更新用户总资产
-                double sellAmount = shares * Double.parseDouble(product.getNetValue());
+                double sellAmount = shares * product.getPrice();
                 com.example.k.model.User user = database.userDao().getById(currentUserId);
                 if (user != null) {
                     user.setTotalAssets(user.getTotalAssets() + sellAmount);
