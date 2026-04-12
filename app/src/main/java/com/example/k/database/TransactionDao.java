@@ -20,10 +20,10 @@ public interface TransactionDao {
     @Delete
     void delete(Transaction transaction);
 
-    @Query("SELECT * FROM transactions WHERE userId = :userId ORDER BY date DESC")
+    @Query("SELECT * FROM transactions WHERE userId = :userId ORDER BY timestamp DESC")
     List<Transaction> getUserTransactions(int userId);
 
-    @Query("SELECT * FROM transactions WHERE userId = :userId AND productId = :productId ORDER BY date DESC")
+    @Query("SELECT * FROM transactions WHERE userId = :userId AND productId = :productId ORDER BY timestamp DESC")
     List<Transaction> getProductTransactions(int userId, int productId);
 
     @Query("SELECT * FROM transactions WHERE id = :id")
